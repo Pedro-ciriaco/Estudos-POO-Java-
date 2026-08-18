@@ -1,0 +1,531 @@
+🟢 Nível 1, variáveis, entrada e condicionais
+1. Classificador de notas
+
+Faça um programa Java que:
+
+Leia o nome de um aluno.
+Leia três notas double.
+Calcule a média.
+Informe:
+Aprovado se média ≥ 7
+Recuperação se média ≥ 5 e < 7
+Reprovado se média < 5
+Mostre o nome, as três notas e a média.
+
+Obrigatório usar:
+
+Scanner
+String
+double
+if/else
+System.out.println()
+
+Objetivo: você deve conseguir escrever isso praticamente traduzindo o que já faria em C++.
+
+🟢 Nível 2, arrays e loops
+2. Maior, menor e média
+
+Crie um programa que leia 10 números inteiros e armazene-os em um array.
+
+Depois, mostre:
+
+maior número;
+menor número;
+média dos números;
+quantidade de números pares;
+quantidade de números ímpares.
+
+Depois percorra o array usando:
+
+for (int numero : numeros)
+
+pelo menos uma vez.
+
+Obrigatório usar:
+
+int[]
+for
+for-each
+condicionais
+.length
+
+Proibido: ArrayList.
+
+🟢 Nível 3, ArrayList
+3. Cadastro de produtos
+
+Crie um programa que permita cadastrar produtos.
+
+Cada produto deve possuir:
+
+nome
+preço
+quantidade
+
+O programa deverá:
+
+Perguntar quantos produtos serão cadastrados.
+Armazená-los em um ArrayList.
+Ao final, mostrar todos os produtos.
+Calcular o valor total do estoque.
+
+Exemplo:
+
+Produto: Arroz
+Preço: 6.50
+Quantidade: 10
+
+Produto: Feijão
+Preço: 8.00
+Quantidade: 5
+
+Resultado:
+
+Arroz - R$ 6.50 - Estoque: 10
+Feijão - R$ 8.00 - Estoque: 5
+
+Valor total do estoque: R$ 105.00
+
+Obrigatório usar:
+
+ArrayList
+add()
+size()
+get()
+for-each
+
+Aqui você já começa a perceber que Java adora transformar uma coisa simples em uma classe.
+
+🟡 Nível 4, String e métodos
+4. Analisador de texto
+
+Faça um programa que receba uma frase.
+
+O programa deverá informar:
+
+quantidade de caracteres;
+quantidade de palavras;
+quantidade de vogais;
+quantidade de consoantes;
+primeira letra;
+última letra;
+frase em letras maiúsculas;
+frase em letras minúsculas.
+
+Além disso, crie métodos separados para realizar as principais operações.
+
+Por exemplo:
+
+static int contarVogais(String texto)
+static int contarPalavras(String texto)
+static int contarConsoantes(String texto)
+
+Obrigatório usar:
+
+String
+charAt()
+length()
+métodos
+return
+if
+loops
+
+Bônus: faça o programa ignorar espaços, números e pontuação na contagem de consoantes.
+
+🟡 Nível 5, classes e objetos
+5. Sistema de jogadores
+
+Crie uma classe Jogador.
+
+Cada jogador deverá possuir:
+
+nome
+idade
+posição
+overall
+
+Crie métodos para:
+
+mostrarInformacoes()
+
+e
+
+ehLenda()
+
+Um jogador será considerado "lenda" se tiver overall >= 90.
+
+No main, crie pelo menos 5 jogadores usando:
+
+new Jogador(...)
+
+e armazene todos em um:
+
+ArrayList<Jogador>
+
+Depois mostre todos os jogadores e diga quais são considerados lendas.
+
+Obrigatório usar:
+
+class
+objetos
+new
+construtor
+ArrayList
+métodos
+this
+🟡 Nível 6, encapsulamento
+6. Conta bancária
+
+Crie uma classe:
+
+ContaBancaria
+
+Ela deverá possuir os atributos:
+
+numero
+titular
+saldo
+
+Mas os atributos devem ser:
+
+private
+
+Crie métodos:
+
+depositar(double valor)
+sacar(double valor)
+mostrarSaldo()
+
+Regras:
+
+não permitir depósito negativo;
+não permitir saque maior que o saldo;
+não permitir saque negativo.
+
+Crie também:
+
+getSaldo()
+
+e, se necessário:
+
+getTitular()
+
+No main, crie uma conta e realize várias operações.
+
+Exemplo:
+
+Titular: Pedro
+Saldo inicial: R$ 1000
+
+Depósito: R$ 500
+Saque: R$ 200
+Saque: R$ 1500
+
+Saldo final: R$ 1300
+
+O saque de R$ 1500 deve ser recusado.
+
+Obrigatório usar:
+
+private
+public
+construtor
+getters
+this
+métodos
+validação
+
+Esse é o primeiro exercício em que quero que você pense:
+
+"O objeto controla seus próprios dados."
+
+🟠 Nível 7, objetos + ordenação
+7. Campeonato de futebol
+
+Crie uma classe:
+
+Time
+
+com:
+
+nome
+pontos
+vitorias
+empates
+derrotas
+saldoDeGols
+
+Crie métodos para registrar:
+
+vitoria()
+empate()
+derrota()
+
+e um método:
+
+mostrarTabela()
+
+Depois crie um:
+
+ArrayList<Time>
+
+com pelo menos 5 times.
+
+Simule os resultados de um campeonato.
+
+Ao final, ordene os times pela seguinte prioridade:
+
+maior número de pontos;
+maior número de vitórias;
+maior saldo de gols.
+
+Depois mostre a tabela:
+
+1º Barcelona     12 pts
+2º Real Madrid   10 pts
+3º City           8 pts
+4º Arsenal        6 pts
+5º Bayern         3 pts
+
+Obrigatório usar:
+
+classes
+objetos
+ArrayList
+métodos
+encapsulamento
+Collections.sort() ou Arrays.sort()
+comparação entre objetos
+
+Desafio extra: use Comparator em vez de implementar a ordenação manualmente.
+
+🔴 Nível 8, herança e polimorfismo
+8. Sistema de funcionários
+
+Crie uma classe:
+
+Funcionario
+
+com:
+
+nome
+salario
+
+Depois crie três classes:
+
+Gerente
+Desenvolvedor
+Estagiario
+
+Todas devem herdar de Funcionario.
+
+Cada uma deverá possuir uma maneira diferente de calcular o salário final.
+
+Por exemplo:
+
+Gerente → salário + 20% de bônus
+Desenvolvedor → salário + bônus fixo
+Estagiário → salário sem bônus
+
+Crie um método:
+
+calcularSalario()
+
+na classe Funcionario.
+
+Depois sobrescreva esse método nas classes filhas.
+
+No main, faça:
+
+ArrayList<Funcionario> funcionarios
+
+e coloque dentro dela objetos dos três tipos.
+
+Depois:
+
+for (Funcionario f : funcionarios) {
+    System.out.println(f.calcularSalario());
+}
+
+O mesmo código deverá funcionar para todos os tipos.
+
+Obrigatório usar:
+
+herança
+extends
+super
+sobrescrita (@Override)
+polimorfismo
+ArrayList
+métodos
+
+Aqui você vai começar a entender por que Java insiste tanto em orientação a objetos.
+
+🔴 Nível 9, interfaces, exceptions e generics
+9. Sistema de pagamentos
+
+Crie uma interface:
+
+interface Pagamento
+
+com o método:
+
+void pagar(double valor);
+
+Depois crie:
+
+PagamentoPix
+PagamentoCartao
+PagamentoBoleto
+
+Todas devem implementar a interface.
+
+Cada tipo deverá possuir uma lógica diferente.
+
+Exemplo:
+
+PIX → sem taxa
+Cartão → 3% de taxa
+Boleto → 1% de taxa
+
+Agora crie uma classe:
+
+Carteira<T>
+
+que seja genérica e possa armazenar objetos de diferentes tipos.
+
+Além disso, crie uma exceção própria:
+
+SaldoInsuficienteException
+
+Caso alguém tente realizar um pagamento maior que o saldo, essa exceção deverá ser lançada.
+
+Você deverá tratar a exceção usando:
+
+try
+catch
+
+Obrigatório usar:
+
+interface
+implements
+polimorfismo
+generics (<T>)
+try
+catch
+throw
+throws
+exceção personalizada
+
+Esse aqui já é um exercício bem mais próximo de Java que você encontraria em projeto real.
+
+🟣 Nível 10, desafio final
+10. Sistema completo de gerenciamento de biblioteca
+
+Agora junta tudo. Porque aparentemente o ser humano decidiu que aprender programação fica mais divertido quando 14 conceitos aparecem simultaneamente.
+
+Crie um sistema de biblioteca capaz de gerenciar:
+
+Livro
+titulo
+autor
+isbn
+anoPublicacao
+disponivel
+Usuario
+nome
+id
+Biblioteca
+
+Deverá possuir listas de:
+
+ArrayList<Livro>
+ArrayList<Usuario>
+
+E deverá permitir:
+
+1 - Cadastrar livro
+2 - Cadastrar usuário
+3 - Listar livros
+4 - Listar usuários
+5 - Buscar livro
+6 - Emprestar livro
+7 - Devolver livro
+8 - Ordenar livros
+9 - Remover livro
+10 - Sair
+Regras
+
+Um livro:
+
+só pode ser emprestado se estiver disponível;
+não pode ser emprestado duas vezes;
+precisa ser devolvido antes de ser emprestado novamente.
+Busca
+
+Permita buscar livros por:
+
+título;
+autor;
+ISBN.
+Ordenação
+
+Permita ordenar por:
+
+título;
+ano de publicação;
+autor.
+Arquitetura
+
+Use pelo menos:
+
+Livro
+Usuario
+Biblioteca
+
+E crie uma interface:
+
+interface Pesquisavel
+
+que tenha algum método relacionado à busca.
+
+Crie também pelo menos uma exceção personalizada, por exemplo:
+
+LivroIndisponivelException
+O programa deverá usar
+
+Obrigatoriamente:
+
+Scanner
+String
+arrays ou ArrayList
+métodos
+classes
+objetos
+construtores
+this
+private
+getters/setters
+static
+public
+extends ou alguma forma relevante de herança
+interface
+implements
+polimorfismo
+@Override
+Collections.sort() ou Comparator
+try/catch
+exceção personalizada
+generics
+for-each
+Bônus
+
+Depois que tudo funcionar, tente substituir alguma parte do código usando Lambda e Streams.
+
+Por exemplo, encontrar todos os livros de determinado autor usando algo na linha de:
+
+livros.stream()
+      .filter(...)
+      .toList();
+
+Não precisa fazer isso antes de dominar o resto. Streams são justamente o tipo de coisa que parece magia negra quando você ainda está tentando descobrir por que String não se compara com ==.
