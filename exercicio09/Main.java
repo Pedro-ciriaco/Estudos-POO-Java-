@@ -14,15 +14,19 @@ public class Main{
 
         for(int i=0;i<carteira.size();i++){
             try{
-                carteira.pagar(i, 600);
+                carteira.pagar(i, 100);
             }
             catch(saldoInsuficienteException e){
                 System.out.println(e.getMessage());
             }
         }
-
+        try{
+            carteira.pagar(0, 200);
+        }
+        catch(saldoInsuficienteException e){
+            System.out.println(e.getMessage());
+        }
     }
-
 }
 interface pagamento{
     double pagar(double valor);
@@ -46,7 +50,7 @@ class pagamentoBoleto implements pagamento{
     }
 }
 
-class Carteira<T>{
+class Carteira<T extends pagamento>{
     private double saldo;
 
     private ArrayList<T> pagamentos;
@@ -61,13 +65,17 @@ class Carteira<T>{
     }
 
     public void pagar(int indice, double valor) throws saldoInsuficienteException{
-        pagamento tipoPagamento = pagamentos.get(indice);
+        T tipoPagamento = pagamentos.get(indice);
         double total = tipoPagamento.pagar(valor);
         if(total > saldo){
             throw new saldoInsuficienteException("Saldo insuficiente!");
         }
         saldo-= total;
-        System.out.printf("Pagamento no valor de R$ %.2f efeturado!%n", total);
+        System.out.printf("Pagamento no valor de R$ %.2f efetuado!%n", total);
+    }
+
+    public int size(){
+        return pagamentos.size();
     }
 }
 
